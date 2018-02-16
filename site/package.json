@@ -1,0 +1,27 @@
+{
+  "name": "site",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "install": "cd ./src/main/react; npm install;",
+    "start": "cd ./src/main/react; npm start;",
+    "start:test": "cd ./src/main/react; npm run start:test;",
+    "start:production": "cd ./src/main/react; npm run start:production;",
+    "build": "cd ./src/main/site-react; npm run build;",
+    "build:test": "cd ./src/main/react; npm run build:test;",
+    "build:production": "cd ./src/main/react; npm run build:production;",
+    "deploy": "npm run build:test; mvn appengine:deploy",
+    "deploy:cron": "mvn appengine:deployCron",
+    "deploy:dispatch": "mvn appengine:deployDispatch",
+    "deploy:production": "npm run build:production; mvn appengine:deploy -P production",
+    "deploy:production:cron": "mvn appengine:deployCron -P production",
+    "deploy:production:dispatch": "mvn appengine:deployDispatch -P production",
+    "run": "watch-exec --command \"mvn appengine:run\" --watch ./src/main/java/",
+    "runWBucket": "watch-exec --command \"mvn appengine:run -Dgcloud.default_gcs_bucket_name=translate-safeswim-test\" --watch ./src/main/java/"
+  },
+  "dependencies": {
+    "moment-range": "^3.1.0",
+    "prop-types": "^15.6.0",
+    "react-hot-loader": "^3.1.2"
+  }
+}

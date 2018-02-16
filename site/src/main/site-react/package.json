@@ -1,0 +1,19 @@
+{
+  "name": "site-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-unity-webgl": "^6.4.4"
+  },
+  "devDependencies": {
+    "react-scripts": "1.1.1"
+  },
+  "scripts": {
+    "start": "REACT_APP_ENV=test react-scripts start",
+    "build": "REACT_APP_ENV=test react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

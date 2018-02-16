@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+
+    <threadsafe>true</threadsafe>
+
+    <!--    <basic-scaling>
+            <max-instances>2</max-instances>
+            <idle-timeout>15m</idle-timeout>
+        </basic-scaling>-->
+
+    <runtime>java8</runtime>
+    <service>default</service>
+
+    <static-files>
+        <include path="/static/**"/>
+        <include path="/index.html"/>
+    </static-files>
+
+
+    <system-properties>
+        <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
+        <property name="env.contentful.space.id" value="${env.contentful.space.id}"/>
+        <property name="env.contentful.cda.token" value="${env.contentful.cda.token}"/>
+        <property name="appengine.api.urlfetch.defaultDeadline" value="10"/>
+    </system-properties>
+
+
+    <env-variables>
+        <env-var name="ENVIRONMENT" value="${env.environment}"/>
+    </env-variables>
+
+</appengine-web-app>
